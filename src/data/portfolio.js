@@ -14,7 +14,7 @@ module.exports = {
   projetos: [
     {
       titulo: 'Blog',
-      descricao: 'O blog foi feito para obter um conhecimento mais profundo de Node.js e ferramentas complementares, como MongoDB, Express, EJS e outros. O Git também foi um foco – estou mantendo o projeto usando um fluxo de trabalho Gitflow.',
+      descricao: 'O blog foi feito para obter um conhecimento mais profundo de Node.js e ferramentas complementares, como MongoDB, Express, EJS e outros.',
       tecnologias: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT'],
       link: '',
     },
