@@ -1,0 +1,21 @@
+{
+  "name": "portifolio",
+  "version": "1.0.0",
+  "description": "Minimalist site with all my habilities and skills that will be important for a company.",
+  "license": "ISC",
+  "author": "Victor Anderson",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.7",
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

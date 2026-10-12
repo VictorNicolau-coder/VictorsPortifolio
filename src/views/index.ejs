@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= titulo %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <main class="mesa">
+    <div class="pasta-wrap">
+
+      <div class="abas" role="tablist" aria-label="Seções do portfólio">
+        <button class="aba" role="tab" id="aba-sobre" aria-controls="painel-sobre" data-aba="sobre" aria-selected="true">Sobre</button>
+        <button class="aba" role="tab" id="aba-projetos" aria-controls="painel-projetos" data-aba="projetos" aria-selected="false" tabindex="-1">Projetos</button>
+        <button class="aba" role="tab" id="aba-formacao" aria-controls="painel-formacao" data-aba="formacao" aria-selected="false" tabindex="-1">Formação</button>
+        <button class="aba" role="tab" id="aba-contato" aria-controls="painel-contato" data-aba="contato" aria-selected="false" tabindex="-1">Contato</button>
+      </div>
+
+      <div class="pasta">
+        <p class="pasta__etiqueta">Currículo, arquivo 001</p>
+
+        <div class="folha">
+
+          <!-- SOBRE -->
+          <section class="painel" role="tabpanel" id="painel-sobre" aria-labelledby="aba-sobre">
+            <div class="perfil">
+              <div class="perfil__lateral">
+                <% if (perfil.foto) { %>
+                  <img class="perfil__foto" src="<%= perfil.foto %>" alt="Foto de <%= perfil.nome %>">
+                <% } else { %>
+                  <div class="perfil__foto perfil__foto--vazia" role="img" aria-label="Espaço reservado para a foto">[ SUA FOTO ]</div>
+                <% } %>
+                <a class="botao" href="<%= perfil.curriculo %>" download>Baixar currículo (PDF)</a>
+              </div>
+
+              <div class="perfil__texto">
+                <p class="rotulo">Ficha pessoal</p>
+                <h1 class="perfil__nome"><%= perfil.nome %></h1>
+                <p class="perfil__cargo"><%= perfil.cargo %></p>
+                <p class="perfil__resumo"><%= perfil.resumo %></p>
+
+                <ul class="etiquetas" aria-label="Habilidades">
+                  <% perfil.habilidades.forEach(function (h) { %>
+                    <li class="etiqueta"><%= h %></li>
+                  <% }) %>
+                </ul>
+
+                <p class="perfil__local"><%= perfil.localizacao %></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROJETOS -->
+          <section class="painel" role="tabpanel" id="painel-projetos" aria-labelledby="aba-projetos" hidden>
+            <h2 class="painel__titulo">Projetos</h2>
+            <div class="fichas">
+              <% projetos.forEach(function (p) { %>
+                <article class="ficha">
+                  <h3 class="ficha__titulo"><%= p.titulo %></h3>
+                  <p class="ficha__texto"><%= p.descricao %></p>
+                  <ul class="etiquetas etiquetas--pequenas" aria-label="Tecnologias">
+                    <% p.tecnologias.forEach(function (t) { %>
+                      <li class="etiqueta"><%= t %></li>
+                    <% }) %>
+                  </ul>
+                  <% if (p.link) { %>
+                    <a class="ficha__link" href="<%= p.link %>" target="_blank" rel="noopener">Ver projeto</a>
+                  <% } %>
+                </article>
+              <% }) %>
+            </div>
+          </section>
+
+          <!-- FORMAÇÃO -->
+          <section class="painel" role="tabpanel" id="painel-formacao" aria-labelledby="aba-formacao" hidden>
+            <h2 class="painel__titulo">Formação</h2>
+            <ol class="linha-tempo">
+              <% formacao.forEach(function (f) { %>
+                <li class="linha-tempo__item">
+                  <span class="linha-tempo__periodo"><%= f.periodo %></span>
+                  <div>
+                    <h3 class="linha-tempo__titulo"><%= f.titulo %></h3>
+                    <p class="linha-tempo__inst"><%= f.instituicao %></p>
+                    <p class="linha-tempo__detalhe"><%= f.detalhe %></p>
+                  </div>
+                </li>
+              <% }) %>
+            </ol>
+          </section>
+
+          <!-- CONTATO -->
+          <section class="painel" role="tabpanel" id="painel-contato" aria-labelledby="aba-contato" hidden>
+            <h2 class="painel__titulo">Contato</h2>
+            <ul class="contatos">
+              <% contatos.forEach(function (c) { %>
+                <li>
+                  <a class="contato" href="<%= c.link %>" target="_blank" rel="noopener">
+                    <span class="contato__rotulo"><%= c.rotulo %></span>
+                    <span class="contato__valor"><%= c.valor %></span>
+                  </a>
+                </li>
+              <% }) %>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
