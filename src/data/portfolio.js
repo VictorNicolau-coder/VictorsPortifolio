@@ -1,6 +1,6 @@
 // Todo o conteúdo do site fica aqui. Edite os textos entre colchetes.
 module.exports = {
-  titulo: 'Victor Anderson Bizerra Nicolau | Portfólio',
+  titulo: 'Portifólio',
   perfil: {
     nome: 'Victor Anderson Bizerra Nicolau',
     cargo: 'Estudante de Sistemas de Informação',
@@ -48,6 +48,6 @@ module.exports = {
   contatos: [
     { rotulo: 'E-mail', valor: 'victoranderson1575@gmail.com', link: 'mailto:victoranderson1575@gmail.com' },
     { rotulo: 'GitHub', valor: 'https://github.com/VictorNicolau-coder', link: 'https://github.com/VictorNicolau-coder' },
-    { rotulo: 'LinkedIn', valor: 'https://www.linkedin.com/in/victor-anderson-012183227/', link: 'https://www.linkedin.com/in/victor-anderson-012183227/' },
+    { rotulo: 'LinkedIn', valor: 'https://www.linkedin.com/in/victor-anderson-bizerra-nicolau-012183227', link: 'https://www.linkedin.com/in/victor-anderson-bizerra-nicolau-012183227' },
   ],
 };
