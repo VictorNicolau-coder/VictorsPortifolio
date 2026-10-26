@@ -48,6 +48,6 @@ module.exports = {
   contatos: [
     { rotulo: 'E-mail', valor: 'victoranderson1575@gmail.com', link: 'mailto:victoranderson1575@gmail.com' },
     { rotulo: 'GitHub', valor: 'https://github.com/VictorNicolau-coder', link: 'https://github.com/VictorNicolau-coder' },
-    { rotulo: 'LinkedIn', valor: 'https://www.linkedin.com/in/victor-anderson-bizerra-nicolau-012183227', link: 'https://www.linkedin.com/in/victor-anderson-bizerra-nicolau-012183227' },
+    { rotulo: 'LinkedIn', valor: 'www.linkedin.com/in/victornicolau-coder ', link: 'www.linkedin.com/in/victornicolau-coder' },
   ],
 };
